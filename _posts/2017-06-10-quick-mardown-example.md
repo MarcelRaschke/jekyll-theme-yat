@@ -2,9 +2,13 @@
 layout: post
 title: Quick markdown example
 subtitle: This is a quick markdown example
+excerpt_image: https://github.com/jeffreytse/jekyll-theme-yat/assets/9413601/2ed22d49-90b1-4f7e-8e8f-b77b21dee505
 categories: markdown
 tags: [example]
+top: 2
 ---
+
+![banner](https://github.com/jeffreytse/jekyll-theme-yat/assets/9413601/2ed22d49-90b1-4f7e-8e8f-b77b21dee505)
 
 Paragraphs are separated by a blank line.
 
@@ -153,7 +157,7 @@ Here's a "line block" (note how whitespace is honored):
 
 and images can be specified like so:
 
-![example image](http://www.unexpected-vortices.com/sw/rippledoc/example-image.jpg "An exemplary image")
+![example image](https://user-images.githubusercontent.com/9413601/123900693-1d9ebd00-d99c-11eb-8e9e-cf7879187606.png "An exemplary image")
 
 Inline math equation: $\omega = d\phi / dt$. Display
 math should get its own line like so:

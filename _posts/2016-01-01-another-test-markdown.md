@@ -20,6 +20,13 @@ $ \int\_a^b f(x)\,dx. $
 
 \\( \int\_a^b f(x)\,dx. \\)
 
+$$
+\begin{cases}
+\text{if true}\ foo \\
+\text{if false}\ bar
+\end{cases}
+$$
+
 $ \rho {\rm{FOD}} = \sum\limits{\sigma ,i} {(\delta _1 - \delta _2 n_i^\sigma )|\phi _i^\sigma ({\bf{r}})|^2} $
 
 $$ \rho {\rm{FOD}} = \sum\limits{\sigma ,i} {(\delta _1 - \delta _2 n_i^\sigma )|\phi _i^\sigma ({\bf{r}})|^2} $$
@@ -85,6 +92,36 @@ for (a, b), neighbors in common_neighbors.items():
     cna_signature = key + (idx,)
     particle_counts[a].update([cna_signature])
 {% endhighlight %}
+
+```cpp
+void insert(const char* key) {
+    if (*key == '\0') {
+        finish = true;
+    } else {
+        int idx = *key - 'A';
+        if (!next[idx])
+            next[idx] = new Trie();
+        next[idx]->insert(key + 1);
+    }
+}
+```
+
+```ruby
+p ":+1:"
+```
+
+``` diff
++        'user_exists' => 'SELECT EXISTS(SELECT 1 FROM table WHERE username = (:username || \'@sample'))',
++        'get_users' => 'SELECT split_part(username, \'@\', 1) FROM table WHERE (username ILIKE :search) OR (name ILIKE :search)',
++        'get_password_hash_for_user' => 'SELECT split_part(password, \'{CRYPT}\', 2) FROM table WHERE username = (:username || \'@sample\')',
++        'set_password_hash_for_user' => 'UPDATE table SET password =  \'{CRYPT}\' || :new_password_hash WHERE username = (:username || \'@sample\')',
+```
+
+Reload the Nginx:
+
+``` console
+$ sudo nginx -s reload
+```
 
 |:                        |:                  :|: $$O_3 + C_2H_2 \rightarrow $$         :|||:  $$O_3 + C_2H_4 \rightarrow $$ :|||:       :| 
 |:  ^^ Method            :| ^^ $$\lambda^a$$  |    vdW |    TS |    cycloadd.           |  vdW  |  TS  |  cycloadd.           | ^^ MAE    |
@@ -163,7 +200,7 @@ for (a, b), neighbors in common_neighbors.items():
 | Row 2              | Banana        | [Github][1]                        |
 | Row 3 (merged)     | Blueberry     | [Google] *****  [Github]           |
 | ^^         | [Plum](https://example.com) | Raspberry ![example][cell image]   |
-| Row 4      | <https://www.google.com>    |                              |
+| Row 4      | <https://www.google.com>    |  [test](https://www.google.com){:target="_blank"}                            |
 |^^          |^^ <https://www.youtube.com> |                              |
 | Row 5      | <https://www.google.com>                                  ||
 
@@ -202,6 +239,16 @@ $\LaTeX{}$
 @startuml
 Bob -> Alice : hello
 @enduml
+
+## Mermaid
+
+```mermaid!
+graph LR
+  concurrent.futures --->| on top of | threading
+  concurrent.futures --->| on top of | multiprocessing
+  threading --->| on top of | \_thread
+  click concurrent.futures "https://docs.python.org/3.9/library/concurrent.futures.html" _blank
+```
 
 ## Video
 
@@ -249,9 +296,17 @@ CAF file (".caf") :
 
 ![](https://hpr.dogphilosophy.net/test/cafopus.caf)
 
+Spotify Podcast:
+
+![](https://open.spotify.com/episode/2sXXGexCXPhGsdf9l99Q73?si=717c6671590745b3)
+
 ## Special media links
 
-![]( {{ "/assets/devstories.webm" | relative_url }} )
+Local video file (".webm"):
+
+![]({{ "/assets/videos/devstories.webm" | relative_url }})
+
+Video with custom thumbnail:
 
 [![w:1100](https://i.imgur.com/bc9HOJU.png)](https://www.youtube.com/watch?v=kCHGDRHZ4eU)
 

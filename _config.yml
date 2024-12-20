@@ -27,14 +27,28 @@
 title: Your awesome title
 email: your-email@domain.com
 author: GitHub User
-copyright: Copyright © 1970-2010
+
+# Copyright setting
+# You can use any html code, currently below placeholders are available:
+# * current year: {currentYear}
+# * author: {author} (Value is the same as site.author)
+# * copyright: (c) - ©
+# * copyleft: (cleft)
+# * sound recording copyright: (p) - ℗
+#
+# For example:
+#   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
+#   "Copyright © 2017-2021 Foobar"
+#
+copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
+
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "" # the base hostname & protocol for your site, e.g. https://example.com
 favicon: "" # the favicon for your site
 
 # Yat date format
@@ -48,8 +62,12 @@ yat:
 # If you don't want transparent header, you can set false
 # header_transparent: true
 
-# Google analytics
-# google_analytics: [Tracking ID]
+# If you want to change the content width, you can set to another value
+# content_width: "920px"
+
+# Google analytics - GA4
+# google_analytics: [Measurement ID]
+# enableDNT: "false"
 
 # If you want to generate website sitemap, you can set true
 # sitemap: false
@@ -95,6 +113,22 @@ yat:
 # Custom color as below:
 # theme_color: "#882250"
 
+# You can choose a brand color
+# Default brand colors as below:
+# orangered: #ff5100
+# greatgold: #f2cb05
+# greenblue: #389092
+#
+# brand_color: orangered
+#
+# Custom color as below:
+# brand_color: "#1a8e42"
+
+# You can custom selection style
+# selection:
+#   color: "#ff00ff"
+#   background_color: "yellow"
+
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
 # (19:00 - 07:00), "manual" is for manual toggle, and
@@ -132,11 +166,53 @@ yat:
 #     subheading: "Your awesome subheading"
 #     banner: "Your image url"
 
-# Excerpt size setting
-# excerpt_size: 350
+# Banner default settings
+# These banner settings are for global banner default, but you can also
+# config it by the front matter for one specific post
+# banner:
+#   video: null             # Video banner source
+#   loop: true              # Video loop
+#   volume: 0               # Video volume (100% is 1.0)
+#   start_at: 0             # Video start time
+#   image: null             # Image banner source
+#   opacity: 1.0            # Banner opacity (100% is 1.0)
+#   background: "rgba(0, 0, 0, 0.8)"  # Banner background (Could be a image)
+#   height: "640px"         # Banner default height
+#   min_height: null        # Banner minimum height
+#   heading_style: null     # Custom heading style (e.g. "font-weight: bold; text-decoration: underline")
+#   subheading_style: null  # Custom subheading style (e.g. color: gold)
+
+# Excerpt settings
+# excerpt:
+#   default_image: /assets/images/default-image.jpeg  # Default image when the image style is not none
+#   image_style: z          # Image layout style (It's value could be none, left, right, top, z, z-reverse)
+#   image_width: 38.2%      # Image default width
+#   image_height: 160px     # Image default height
+#   text_size: 350          # Words default size
 
 # Pagination setting
 # paginate: 5
+
+# Photo previewer settings (PhotoSwipe 5)
+# the options please refer to: https://photoswipe.com/options/
+# photo_previewer:
+#  gallery: "section.main"
+#  children: "a.photo-swipe"
+#  bgOpacity: 0.8
+#  padding:
+#    top: 20
+#    bottom: 40
+#    left: 100
+#    right: 100
+
+# Click to top settings
+# click_to_top:
+#   light:
+#     background_color: "white"
+#     color: "#454545"
+#   dark:
+#     background_color: "#34323d"
+#     color: "#bbb"
 
 # Disqus comments
 # disqus:
@@ -150,10 +226,21 @@ yat:
 #   client_secret: "Your client secret"
 #   redirect_uri: "Your redirect url"   # If you use a custom domain name
 
+# Utterances comments
+# See https://utteranc.es/
+# set follow_site_theme true to make utterances' theme follow the site's
+
+# utterances:
+#   repo: "owner/repo"
+#   issue_term: "title"
+#   label: "utterances comment"
+#   theme: "github-light"
+#   follow_site_theme: true
+
 # Build settings
 # highlighter: none
 markdown: kramdown
-kmarkdown:
+kramdown:
   input: GFM
 
 plugins:
